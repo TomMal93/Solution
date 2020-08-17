@@ -13,7 +13,7 @@ namespace SimpleSolution.Data.DAL
     {
         public SimpleContext() : base("SimpleSolutionContext")
         {
-
+            Database.SetInitializer<SimpleContext>(new SimpleInitializer());
         }
 
         public DbSet<Classroom> Classrooms { get; set; }

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\SimpleContext.cs" />
+    <Compile Include="DAL\SimpleInitializer.cs" />
     <Compile Include="ModelsBase\EntityBase.cs" />
     <Compile Include="Models\Classroom.cs" />
     <Compile Include="Models\Student.cs" />
