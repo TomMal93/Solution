@@ -1,11 +1,7 @@
 ﻿using SimpleSolution.Data.Models;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SimpleSolution.Data.DAL
 {
@@ -13,7 +9,7 @@ namespace SimpleSolution.Data.DAL
     {
         public SimpleContext() : base("SimpleSolutionContext")
         {
-            Database.SetInitializer<SimpleContext>(new SimpleInitializer());
+            Database.SetInitializer(new SimpleInitializer());
         }
 
         public DbSet<Classroom> Classrooms { get; set; }

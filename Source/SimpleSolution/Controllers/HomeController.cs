@@ -1,5 +1,4 @@
 ﻿using SimpleSolution.Data.DAL;
-using SimpleSolution.Data.Models;
 using SimpleSolution.ViewModels;
 using System.Linq;
 using System.Web.Mvc;

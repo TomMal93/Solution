@@ -1,8 +1,7 @@
-﻿namespace SimpleSolution.Data.Migrations
+﻿using System.Data.Entity.Migrations;
+
+namespace SimpleSolution.Data.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class AddBirthDateToStudent : DbMigration
     {
         public override void Up()
