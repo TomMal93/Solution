@@ -14,9 +14,16 @@ namespace SimpleSolution.Controllers
         public ActionResult Index()
         {
 
-            var a = simpleContext.Classrooms.ToList();
+            var classrooms = simpleContext.Classrooms.ToList();
+            var students = simpleContext.Students.ToList();
 
-            return View("Index", new SimpleViewModel { Text = "TESTOWY TEKST" });
+            var viewModel = new HomeViewModel
+            {
+                Classrooms = classrooms,
+                Students = students
+            };
+
+            return View("Index", viewModel);
         }
     }
 }

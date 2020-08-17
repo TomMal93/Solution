@@ -1,10 +1,27 @@
 ﻿@using SimpleSolution.ViewModels
-@model SimpleViewModel
+@model HomeViewModel
 
 @{
     ViewBag.Title = "HomeView";
 }
 
 <h2>HomeView</h2>
-<p>@Model.Text</p>
+
+
+@foreach (var classroom in Model.Classrooms)
+{
+    <p>@classroom.Name</p>
+
+    foreach (var studentsInClassroom in @classroom.Students)
+    {
+        <p>@studentsInClassroom.Name</p>
+        <p>@studentsInClassroom.Surname</p>
+    }
+}
+
+@foreach (var student in Model.Students)
+{
+    <p>@student.Name</p>
+    <p>@student.Surname</p>
+}
 
