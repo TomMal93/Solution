@@ -1,19 +1,15 @@
-﻿using SimpleSolution.Data.Models;
+﻿using SimpleSolution.Data.Migrations;
+using SimpleSolution.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 
 namespace SimpleSolution.Data.DAL
 {
-    public class SimpleInitializer : DropCreateDatabaseIfModelChanges<SimpleContext>
+    public class SimpleInitializer : MigrateDatabaseToLatestVersion<SimpleContext, Configuration>
     {
-        protected override void Seed(SimpleContext context)
-        {
-            SeedSimpleData(context);
-            base.Seed(context);
-        }
-
-        private void SeedSimpleData(SimpleContext context)
+        public static void SeedSimpleData(SimpleContext context)
         {
             var classRoom = new List<Classroom>
             {
@@ -21,7 +17,7 @@ namespace SimpleSolution.Data.DAL
                 new Classroom() {ClassroomId = Guid.Parse("9586feed-ca7d-48f6-8230-97f2874e8701"), Name = "Klasa druga"}
             };
 
-            classRoom.ForEach(c => context.Classrooms.Add(c));
+            classRoom.ForEach(c => context.Classrooms.AddOrUpdate(c));
             context.SaveChanges();
 
             var students = new List<Student>
@@ -30,7 +26,7 @@ namespace SimpleSolution.Data.DAL
                 new Student() {StudentId = Guid.Parse("fc2f4d28-1d08-4f4c-a8dc-e0ef6e3028dd"), Name = "Imie", Surname = "Nazwisko", BirthDate = DateTime.Parse("10/10/2009"), ClassroomId = Guid.Parse("9586feed-ca7d-48f6-8230-97f2874e8701")}
             };
 
-            students.ForEach(s => context.Students.Add(s));
+            students.ForEach(s => context.Students.AddOrUpdate(s));
             context.SaveChanges();
         }
     }

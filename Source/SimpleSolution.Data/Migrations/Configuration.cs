@@ -1,11 +1,9 @@
-﻿namespace SimpleSolution.Data.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+﻿using SimpleSolution.Data.DAL;
+using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DAL.SimpleContext>
+namespace SimpleSolution.Data.Migrations
+{
+    public sealed class Configuration : DbMigrationsConfiguration<SimpleContext>
     {
         public Configuration()
         {
@@ -13,12 +11,9 @@
             ContextKey = "SimpleSolution.Data.DAL.SimpleContext";
         }
 
-        protected override void Seed(DAL.SimpleContext context)
+        protected override void Seed(SimpleContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
+            SimpleInitializer.SeedSimpleData(context);
         }
     }
 }
