@@ -57,6 +57,10 @@
     <Compile Include="Migrations\202008171700230_InitialCreate.designer.cs">
       <DependentUpon>202008171700230_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008171721181_AddBirthDateToStudent.cs" />
+    <Compile Include="Migrations\202008171721181_AddBirthDateToStudent.designer.cs">
+      <DependentUpon>202008171721181_AddBirthDateToStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelsBase\EntityBase.cs" />
     <Compile Include="Models\Classroom.cs" />
@@ -66,6 +70,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008171700230_InitialCreate.resx">
       <DependentUpon>202008171700230_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008171721181_AddBirthDateToStudent.resx">
+      <DependentUpon>202008171721181_AddBirthDateToStudent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

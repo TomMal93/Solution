@@ -26,8 +26,8 @@ namespace SimpleSolution.Data.DAL
 
             var students = new List<Student>
             {
-                new Student() {StudentId = Guid.Parse("5bfc3adf-b6ae-4eb3-96f7-9bf4f44ca5f6"), Name = "Imie", Surname = "Nazwisko", ClassroomId = Guid.Parse("bef018c6-a684-4a49-9b2f-f80b1dd9143c")},
-                new Student() {StudentId = Guid.Parse("fc2f4d28-1d08-4f4c-a8dc-e0ef6e3028dd"), Name = "Imie", Surname = "Nazwisko", ClassroomId = Guid.Parse("9586feed-ca7d-48f6-8230-97f2874e8701")}
+                new Student() {StudentId = Guid.Parse("5bfc3adf-b6ae-4eb3-96f7-9bf4f44ca5f6"), Name = "Imie", Surname = "Nazwisko", BirthDate = DateTime.Parse("10/10/2010"), ClassroomId = Guid.Parse("bef018c6-a684-4a49-9b2f-f80b1dd9143c")},
+                new Student() {StudentId = Guid.Parse("fc2f4d28-1d08-4f4c-a8dc-e0ef6e3028dd"), Name = "Imie", Surname = "Nazwisko", BirthDate = DateTime.Parse("10/10/2009"), ClassroomId = Guid.Parse("9586feed-ca7d-48f6-8230-97f2874e8701")}
             };
 
             students.ForEach(s => context.Students.Add(s));

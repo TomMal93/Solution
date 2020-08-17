@@ -13,6 +13,7 @@ namespace SimpleSolution.Data.Models
         [Required(ErrorMessage = "Proszę wprowadzić nazwisko.")]
         [StringLength(50)]
         public string Surname { get; set; }
+        public DateTime BirthDate { get; set; }
 
         public Guid ClassroomId { get; set; }
 
